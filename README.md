@@ -19,6 +19,7 @@ Requirements:
 - **Optimization profiles:** gaming, older PCs/laptops, media work, and work/study. A profile only preselects proposed settings and software. No changes are made until you confirm the action.
 - **Change journal:** records the original and resulting values for tracked registry settings and active power plan changes. You can check whether those values still match and restore logged reversible changes. Later manual changes are left untouched. Temporary-file cleanup, DNS cache flushing, software installs, and some Windows operations cannot be rolled back by the journal.
 - **Software installation:** downloads selected installers from configured HTTPS sources, enforces a host allowlist and size limit, verifies a configured SHA-256 hash or a trusted Authenticode signature, then runs the installer. Installers can show their own setup window. WinRAR is listed in each software category, but duplicate entries install only once.
+- **Installed app detection:** scans Windows uninstall registry entries for known catalog apps, marks matches as installed, and skips them during batch installs. WPS Office is available through WinGet (`Kingsoft.WPSOffice`), which must be present on the PC.
 - **Driver downloads:** searches the configured Windows Update source for assigned driver updates and downloads matching packages. It does not install drivers automatically. In a virtual machine, Windows Update searches for drivers for that VM's virtual hardware.
 - **Hardware inventory:** shows the CPU, graphics adapters, motherboard, memory, and storage devices reported by Windows Management Instrumentation. Windows Update uses the actual detected hardware when searching for driver updates.
 - **Privacy:** offers Mullvad Browser and links to the official Tor Browser download page. It also offers selected Windows privacy settings. The app does not remove Windows apps or components.
@@ -60,6 +61,7 @@ The workflow builds the project on Windows and attaches `Windows-Optimizer-for-A
 - `MainWindow.xaml` and `MainWindow.xaml.cs` — main interface, profiles, software catalog, and privacy actions.
 - `LanguagePickerWindow.cs`, `Localization.cs` — startup language selection and English/Russian UI strings.
 - `SystemActions.cs` — Windows and GPU detection, restore points, temporary-file cleanup, and selected system settings.
+- `InstalledSoftwareService.cs` and `WingetService.cs` — installed-app discovery and WinGet-based WPS Office installation.
 - `InstallerService.cs` — download limits, host checks, hash/signature verification, and installer execution.
 - `DriverUpdateService.cs` — Windows Update Agent driver search and download.
 - `app.manifest` — requests administrator privileges.
@@ -86,6 +88,8 @@ Windows Optimizer for All — настольная программа для Win
 - **Профили оптимизации:** игры, старый ПК/ноутбук, монтаж и рендеринг, работа и учёба. Профиль только отмечает предлагаемые настройки и программы. Изменения вступают в силу только после подтверждения.
 - **Журнал изменений:** сохраняет исходные и итоговые значения отслеживаемых параметров реестра и активного плана питания. Можно проверить, совпадают ли они с текущими, и вернуть записанные обратимые изменения. Если после приложения параметр изменили вручную, восстановление его пропустит. Очистку временных файлов, сброс DNS, установку программ и некоторые системные операции журнал отменить не может.
 - **Установка программ:** загружает выбранные установщики с заданных HTTPS-источников, проверяет разрешённый домен, ограничивает размер файла и проверяет заданную SHA-256-сумму либо доверенную цифровую подпись Authenticode, после чего запускает установщик. Установщик может показать собственное окно. WinRAR отображается в каждой категории, но повторно не запускается.
+- **Определение программ:** проверяет записи установленных приложений Windows, помечает найденные программы из каталога и пропускает их при пакетной установке. WPS Office устанавливается через WinGet (`Kingsoft.WPSOffice`); на компьютере должен быть установлен Windows Package Manager.
+- **WPS Office:** офисный пакет для документов, таблиц, презентаций и PDF; базовые возможности бесплатны, некоторые функции платные.
 - **Драйверы:** ищет назначенные драйверы через выбранный источник Windows Update и скачивает найденные пакеты. Автоматической установки драйверов нет. В виртуальной машине поиск относится к виртуальному оборудованию гостевой Windows.
 - **Комплектующие:** показывает процессор, видеокарты, материнскую плату, память и накопители, которые сообщает WMI. При поиске Windows Update сверяет драйверы с обнаруженным оборудованием.
 - **Приватность:** предлагает Mullvad Browser и открывает официальную страницу загрузки Tor Browser. Также доступны отдельные параметры приватности Windows. Программа не удаляет приложения или компоненты Windows.
@@ -127,6 +131,7 @@ Workflow собирает приложение на Windows и прикрепл�
 - `MainWindow.xaml` и `MainWindow.xaml.cs` — интерфейс, профили, каталог программ и настройки приватности.
 - `LanguagePickerWindow.cs`, `Localization.cs` — выбор языка при запуске и английский/русский интерфейс.
 - `SystemActions.cs` — определение Windows и видеокарты, точки восстановления, очистка временных файлов и выбранные системные настройки.
+- `InstalledSoftwareService.cs` и `WingetService.cs` — поиск уже установленных программ и установка WPS Office через WinGet.
 - `InstallerService.cs` — лимит размера, проверка домена и подписи/хеша, запуск установщика.
 - `DriverUpdateService.cs` — поиск и загрузка драйверов через Windows Update Agent.
 - `app.manifest` — запрос прав администратора.
