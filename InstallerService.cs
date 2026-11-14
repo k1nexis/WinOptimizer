@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
-namespace WinOptimizer
+namespace WindowsOptimizerForAll
 {
  public static class InstallerService
  {
@@ -24,7 +24,7 @@ namespace WinOptimizer
    string extension = String.IsNullOrWhiteSpace(item.FileExtension) ? ".exe" : item.FileExtension;
    if ((extension != ".exe" && extension != ".msi") || Path.GetFileName(extension) != extension)
     throw new InvalidOperationException(Localization.T("Разрешены только установщики EXE и MSI."));
-   string temp = Path.Combine(Path.GetTempPath(), "WinOptimizer_" + Guid.NewGuid().ToString("N") + extension);
+   string temp = Path.Combine(Path.GetTempPath(), "WindowsOptimizerForAll_" + Guid.NewGuid().ToString("N") + extension);
    try
    {
     using (var handler = new HttpClientHandler())

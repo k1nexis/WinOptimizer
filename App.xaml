@@ -1,7 +1,7 @@
-<Application x:Class="WinOptimizer.App"
+<Application x:Class="WindowsOptimizerForAll.App"
  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
- xmlns:local="clr-namespace:WinOptimizer"
+ xmlns:local="clr-namespace:WindowsOptimizerForAll"
  >
  <Application.Resources>
   <local:LocalizedTextConverter x:Key="LocalizedTextConverter"/>

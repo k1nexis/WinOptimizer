@@ -1,6 +1,6 @@
 using System.Windows;
 
-namespace WinOptimizer
+namespace WindowsOptimizerForAll
 {
  public partial class App : Application
  {

@@ -2,7 +2,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace WinOptimizer
+namespace WindowsOptimizerForAll
 {
  public sealed class LanguagePickerWindow : Window
  {
@@ -12,7 +12,7 @@ namespace WinOptimizer
 
   public LanguagePickerWindow()
   {
-   Title = "Choose language / Выберите язык";
+   Title = "Windows Optimizer for All — Choose language";
    Width = 390;
    Height = 210;
    ResizeMode = ResizeMode.NoResize;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
-namespace WinOptimizer
+namespace WindowsOptimizerForAll
 {
  public static class DriverUpdateService
  {

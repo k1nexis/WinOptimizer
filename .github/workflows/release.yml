@@ -26,8 +26,8 @@ jobs:
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: WinOptimizer-Windows
-          path: dist/WinOptimizer.zip
+          name: Windows-Optimizer-for-All-Windows
+          path: dist/Windows-Optimizer-for-All.zip
           if-no-files-found: error
 
       - name: Publish GitHub release
@@ -35,4 +35,4 @@ jobs:
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "${{ github.ref_name }}" dist/WinOptimizer.zip --title "WinOptimizer ${{ github.ref_name }}" --generate-notes
+        run: gh release create "${{ github.ref_name }}" dist/Windows-Optimizer-for-All.zip --title "Windows Optimizer for All ${{ github.ref_name }}" --generate-notes

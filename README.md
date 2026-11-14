@@ -1,10 +1,12 @@
-﻿# WinOptimizer
+# Windows Optimizer for All
 
-WinOptimizer is a Windows desktop utility built with WPF and .NET Framework 4.8. It provides optional optimization profiles, a curated software installer, a Windows Update driver-download helper, and privacy settings. The first screen asks for a language; English is selected by default, and Russian is also available.
+![Windows Optimizer for All app icon](assets/windows-optimizer-for-all.svg)
+
+Windows Optimizer for All is a Windows desktop utility built with WPF and .NET Framework 4.8. It provides optional optimization profiles, a curated software installer, a Windows Update driver-download helper, and privacy settings. The first screen asks for a language; English is selected by default, and Russian is also available.
 
 ## Download and run
 
-Download `WinOptimizer.zip` from the repository Releases page, extract it, and run `WinOptimizer.exe`. Windows asks for administrator permission because some selected settings apply to the computer. Review every selection before applying it.
+Download `Windows-Optimizer-for-All.zip` from the repository Releases page, extract it, and run `WindowsOptimizerForAll.exe`. Windows asks for administrator permission because some selected settings apply to the computer. Review every selection before applying it.
 
 Requirements:
 
@@ -33,9 +35,9 @@ On Windows, install Visual Studio Build Tools or Visual Studio with **.NET deskt
 ./build-release.ps1
 ```
 
-The script builds Release and writes `dist/WinOptimizer.exe` and `dist/WinOptimizer.zip`. The executable depends on the Windows .NET Framework 4.8 runtime; this is not a self-contained .NET deployment. No third-party NuGet packages are used.
+The script builds Release and writes `dist/WindowsOptimizerForAll.exe` and `dist/Windows-Optimizer-for-All.zip`. The executable depends on the Windows .NET Framework 4.8 runtime; this is not a self-contained .NET deployment. No third-party NuGet packages are used.
 
-Alternatively, open `WinOptimizer.csproj` in Visual Studio and build the **Release / Any CPU** configuration. The raw build output is `bin/Release/WinOptimizer.exe`.
+Alternatively, open `WindowsOptimizerForAll.csproj` in Visual Studio and build the **Release / Any CPU** configuration. The raw build output is `bin/Release/WindowsOptimizerForAll.exe`.
 
 ## Publish a GitHub release
 
@@ -46,11 +48,11 @@ For the full step-by-step publishing guide in Russian, see [PUBLISHING.md](PUBLI
 3. When ready to publish, create and push a version tag, for example:
 
    ```powershell
-   git tag v1.0.0
-   git push origin v1.0.0
+   git tag v1.2.0
+   git push origin v1.2.0
    ```
 
-The workflow builds the project on Windows and attaches `WinOptimizer.zip` to a GitHub Release for `v*` tags. Review the source, choose a repository license, and test the artifact on a clean Windows machine before distributing it broadly. The executable is not code-signed by this project.
+The workflow builds the project on Windows and attaches `Windows-Optimizer-for-All.zip` to a GitHub Release for `v*` tags. Review the source, choose a repository license, and test the artifact on a clean Windows machine before distributing it broadly. The executable is not code-signed by this project.
 
 ## Project files
 
@@ -64,13 +66,13 @@ The workflow builds the project on Windows and attaches `WinOptimizer.zip` to a 
 
 ---
 
-# WinOptimizer (русский)
+# Windows Optimizer for All (русский)
 
-WinOptimizer — настольная программа для Windows на WPF и .NET Framework 4.8. В ней есть профили оптимизации, каталог установщиков программ, загрузка драйверов через Windows Update и параметры приватности. При запуске появляется выбор языка: по умолчанию выбран English, также доступен русский.
+Windows Optimizer for All — настольная программа для Windows на WPF и .NET Framework 4.8. В ней есть профили оптимизации, каталог установщиков программ, загрузка драйверов через Windows Update и параметры приватности. При запуске появляется выбор языка: по умолчанию выбран English, также доступен русский.
 
 ## Скачать и запустить
 
-Скачайте `WinOptimizer.zip` со страницы Releases репозитория, распакуйте архив и запустите `WinOptimizer.exe`. Windows запросит права администратора, потому что некоторые выбранные настройки затрагивают систему. Перед применением проверьте отмеченные пункты.
+Скачайте `Windows-Optimizer-for-All.zip` со страницы Releases репозитория, распакуйте архив и запустите `WindowsOptimizerForAll.exe`. Windows запросит права администратора, потому что некоторые выбранные настройки затрагивают систему. Перед применением проверьте отмеченные пункты.
 
 Требования:
 
@@ -99,9 +101,9 @@ Mullvad Browser предназначен для снижения трекинг�
 ./build-release.ps1
 ```
 
-Скрипт соберёт Release и создаст `dist/WinOptimizer.exe` и `dist/WinOptimizer.zip`. EXE требует среду выполнения .NET Framework 4.8 в Windows — это не автономная поставка со встроенной средой. Сторонние NuGet-пакеты не используются.
+Скрипт соберёт Release и создаст `dist/WindowsOptimizerForAll.exe` и `dist/Windows-Optimizer-for-All.zip`. EXE требует среду выполнения .NET Framework 4.8 в Windows — это не автономная поставка со встроенной средой. Сторонние NuGet-пакеты не используются.
 
-Также можно открыть `WinOptimizer.csproj` в Visual Studio и собрать конфигурацию **Release / Any CPU**. Результат сборки появится в `bin/Release/WinOptimizer.exe`.
+Также можно открыть `WindowsOptimizerForAll.csproj` в Visual Studio и собрать конфигурацию **Release / Any CPU**. Результат сборки появится в `bin/Release/WindowsOptimizerForAll.exe`.
 
 ## Публикация релиза на GitHub
 
@@ -112,11 +114,11 @@ Mullvad Browser предназначен для снижения трекинг�
 3. Когда версия будет готова, создайте и отправьте тег, например:
 
    ```powershell
-   git tag v1.0.0
-   git push origin v1.0.0
+   git tag v1.2.0
+   git push origin v1.2.0
    ```
 
-Workflow собирает приложение на Windows и прикрепляет `WinOptimizer.zip` к GitHub Release для тегов `v*`. Перед распространением проверьте исходники, выберите лицензию репозитория и испытайте архив на чистой Windows. EXE не подписан цифровой подписью разработчика этого проекта.
+Workflow собирает приложение на Windows и прикрепляет `Windows-Optimizer-for-All.zip` к GitHub Release для тегов `v*`. Перед распространением проверьте исходники, выберите лицензию репозитория и испытайте архив на чистой Windows. EXE не подписан цифровой подписью разработчика этого проекта.
 
 ## Файлы проекта
 
