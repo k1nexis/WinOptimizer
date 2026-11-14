@@ -19,9 +19,10 @@ The app detects whether Windows is 32-bit (x86) or 64-bit (x64) and selects the 
 ## Features
 
 - **Optimization profiles:** gaming, older PCs/laptops, media work, and work/study. A profile only preselects proposed settings and software. No changes are made until you confirm the action.
-- **Change journal:** records the original and resulting values for tracked registry settings and active power plan changes. You can check whether those values still match and restore logged reversible changes. Later manual changes are left untouched. Temporary-file cleanup, DNS cache flushing, software installs, and some Windows operations cannot be rolled back by the journal.
+- **Change journal:** records the original and resulting values for tracked registry settings and active power plan changes. You can check whether those values still match and restore logged reversible changes. Later manual changes are left untouched. Temporary-file cleanup, DNS cache flushing, software installs, optional app removals, and some Windows operations cannot be rolled back by the journal.
 - **Software installation:** downloads selected installers from configured HTTPS sources, enforces a host allowlist and size limit, verifies a configured SHA-256 hash or a trusted Authenticode signature, then runs the installer. Installers can show their own setup window. WinRAR is listed in each software category, but duplicate entries install only once.
 - **Installed app detection:** scans Windows uninstall registry entries for known catalog apps, marks matches as installed, and skips them during batch installs. WPS Office is available through WinGet (`Kingsoft.WPSOffice`), which must be present on the PC.
+- **Optional Windows app removal:** offers a small, profile-based list of optional inbox apps such as News, Weather, Solitaire, and Feedback Hub. It detects which ones are installed, removes only selected apps for the current user, asks to create a restore point before proceeding, and records the action as irreversible. A restore point does not back up removed apps. Removing these apps may free a little disk space, but does not promise more FPS, faster rendering, or lower memory use. System components, drivers, Microsoft Store, and Xbox Game Bar are excluded.
 - **Driver downloads:** searches the configured Windows Update source for assigned driver updates and downloads matching packages. It does not install drivers automatically. In a virtual machine, Windows Update searches for drivers for that VM's virtual hardware.
 - **Hardware inventory:** shows the CPU, graphics adapters, motherboard, memory, and storage devices reported by Windows Management Instrumentation. Windows Update uses the actual detected hardware when searching for driver updates.
 - **Privacy:** offers Mullvad Browser and links to the official Tor Browser download page. It also offers selected Windows privacy settings. The app does not remove Windows apps or components.
@@ -52,8 +53,8 @@ For the full step-by-step publishing guide in Russian, see [PUBLISHING.md](PUBLI
 3. When ready to publish, create and push a version tag, for example:
 
    ```powershell
-   git tag v1.4.1
-   git push origin v1.4.1
+   git tag v1.4.2
+   git push origin v1.4.2
    ```
 
 The workflow builds the project on Windows and attaches `Windows-Optimizer-for-All.zip` to a GitHub Release for `v*` tags. Review the source, choose a repository license, and test the artifact on a clean Windows machine before distributing it broadly. The executable is not code-signed by this project.
@@ -90,9 +91,10 @@ Windows Optimizer for All — настольная программа для Win
 ## Возможности
 
 - **Профили оптимизации:** игры, старый ПК/ноутбук, монтаж и рендеринг, работа и учёба. Профиль только отмечает предлагаемые настройки и программы. Изменения вступают в силу только после подтверждения.
-- **Журнал изменений:** сохраняет исходные и итоговые значения отслеживаемых параметров реестра и активного плана питания. Можно проверить, совпадают ли они с текущими, и вернуть записанные обратимые изменения. Если после приложения параметр изменили вручную, восстановление его пропустит. Очистку временных файлов, сброс DNS, установку программ и некоторые системные операции журнал отменить не может.
+- **Журнал изменений:** сохраняет исходные и итоговые значения отслеживаемых параметров реестра и активного плана питания. Можно проверить, совпадают ли они с текущими, и вернуть записанные обратимые изменения. Если после приложения параметр изменили вручную, восстановление его пропустит. Очистку временных файлов, сброс DNS, установку и удаление приложений, а также некоторые системные операции журнал отменить не может.
 - **Установка программ:** загружает выбранные установщики с заданных HTTPS-источников, проверяет разрешённый домен, ограничивает размер файла и проверяет заданную SHA-256-сумму либо доверенную цифровую подпись Authenticode, после чего запускает установщик. Установщик может показать собственное окно. WinRAR отображается в каждой категории, но повторно не запускается.
 - **Определение программ:** проверяет записи установленных приложений Windows, помечает найденные программы из каталога и пропускает их при пакетной установке. WPS Office устанавливается через WinGet (`Kingsoft.WPSOffice`); на компьютере должен быть установлен Windows Package Manager.
+- **Удаление необязательных приложений Windows:** показывает небольшой список приложений вроде «Новости», «Погода», «Коллекция пасьянсов» и «Центр отзывов», подходящий выбранному профилю. Программа проверяет, что установлено, и удаляет только выбранное для текущего пользователя; перед этим предлагает создать точку восстановления и записывает действие как необратимое. Точка восстановления не сохраняет удалённые приложения. Удаление может немного освободить место на диске, но не обещает прирост FPS, ускорение рендеринга или снижение расхода памяти. Системные компоненты, драйверы, Microsoft Store и Xbox Game Bar исключены.
 - **WPS Office:** офисный пакет для документов, таблиц, презентаций и PDF; базовые возможности бесплатны, некоторые функции платные.
 - **Драйверы:** ищет назначенные драйверы через выбранный источник Windows Update и скачивает найденные пакеты. Автоматической установки драйверов нет. В виртуальной машине поиск относится к виртуальному оборудованию гостевой Windows.
 - **Комплектующие:** показывает процессор, видеокарты, материнскую плату, память и накопители, которые сообщает WMI. При поиске Windows Update сверяет драйверы с обнаруженным оборудованием.
@@ -124,8 +126,8 @@ Mullvad Browser предназначен для снижения трекинг�
 3. Когда версия будет готова, создайте и отправьте тег, например:
 
    ```powershell
-   git tag v1.4.1
-   git push origin v1.4.1
+   git tag v1.4.2
+   git push origin v1.4.2
    ```
 
 Workflow собирает приложение на Windows и прикрепляет `Windows-Optimizer-for-All.zip` к GitHub Release для тегов `v*`. Перед распространением проверьте исходники, выберите лицензию репозитория и испытайте архив на чистой Windows. EXE не подписан цифровой подписью разработчика этого проекта.
