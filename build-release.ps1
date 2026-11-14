@@ -7,7 +7,9 @@ $distDir = Join-Path $root "dist"
 $msbuild = Get-Command msbuild.exe -ErrorAction SilentlyContinue
 
 if ($msbuild) {
-    & $msbuild.Source $project /m /p:Configuration=Release '/p:Platform=Any CPU' /verbosity:minimal
+    # The project declares its configuration as Release|AnyCPU. Passing "Any CPU"
+    # prevents MSBuild from matching that property group and leaves OutputPath empty.
+    & $msbuild.Source $project /m /p:Configuration=Release /p:Platform=AnyCPU /verbosity:minimal
 } else {
     & dotnet build $project --configuration Release
 }
