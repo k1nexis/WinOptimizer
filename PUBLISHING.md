@@ -42,7 +42,7 @@ git add .
 git status --short
 git commit -m "Initial WinOptimizer release"
 git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/WinOptimizer.git
+git remote add origin https://github.com/k1nexis/WinOptimizer.git
 git push -u origin main
 ```
 
