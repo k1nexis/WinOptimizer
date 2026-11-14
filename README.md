@@ -17,6 +17,7 @@ Requirements:
 ## Features
 
 - **Optimization profiles:** gaming, older PCs/laptops, media work, and work/study. A profile only preselects proposed settings and software. No changes are made until you confirm the action.
+- **Change journal:** records the original and resulting values for tracked registry settings and active power plan changes. You can check whether those values still match and restore logged reversible changes. Later manual changes are left untouched. Temporary-file cleanup, DNS cache flushing, software installs, and some Windows operations cannot be rolled back by the journal.
 - **Software installation:** downloads selected installers from configured HTTPS sources, enforces a host allowlist and size limit, verifies a configured SHA-256 hash or a trusted Authenticode signature, then runs the installer. Installers can show their own setup window. WinRAR is listed in each software category, but duplicate entries install only once.
 - **Driver downloads:** searches the configured Windows Update source for assigned driver updates and downloads matching packages. It does not install drivers automatically. In a virtual machine, Windows Update searches for drivers for that VM's virtual hardware.
 - **Hardware inventory:** shows the CPU, graphics adapters, motherboard, memory, and storage devices reported by Windows Management Instrumentation. Windows Update uses the actual detected hardware when searching for driver updates.
@@ -83,6 +84,7 @@ Windows Optimizer for All — настольная программа для Win
 ## Возможности
 
 - **Профили оптимизации:** игры, старый ПК/ноутбук, монтаж и рендеринг, работа и учёба. Профиль только отмечает предлагаемые настройки и программы. Изменения вступают в силу только после подтверждения.
+- **Журнал изменений:** сохраняет исходные и итоговые значения отслеживаемых параметров реестра и активного плана питания. Можно проверить, совпадают ли они с текущими, и вернуть записанные обратимые изменения. Если после приложения параметр изменили вручную, восстановление его пропустит. Очистку временных файлов, сброс DNS, установку программ и некоторые системные операции журнал отменить не может.
 - **Установка программ:** загружает выбранные установщики с заданных HTTPS-источников, проверяет разрешённый домен, ограничивает размер файла и проверяет заданную SHA-256-сумму либо доверенную цифровую подпись Authenticode, после чего запускает установщик. Установщик может показать собственное окно. WinRAR отображается в каждой категории, но повторно не запускается.
 - **Драйверы:** ищет назначенные драйверы через выбранный источник Windows Update и скачивает найденные пакеты. Автоматической установки драйверов нет. В виртуальной машине поиск относится к виртуальному оборудованию гостевой Windows.
 - **Комплектующие:** показывает процессор, видеокарты, материнскую плату, память и накопители, которые сообщает WMI. При поиске Windows Update сверяет драйверы с обнаруженным оборудованием.
