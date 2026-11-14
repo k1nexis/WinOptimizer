@@ -35,8 +35,8 @@ GitHub перенаправляет большинство старых ссыл
 3. Для публичного GitHub Release создай уникальный тег и отправь его. Например, для этой версии:
 
    ```powershell
-   git tag v1.2.0
-   git push origin v1.2.0
+   git tag v1.4.1
+   git push origin v1.4.1
    ```
 
    Workflow прикрепит `Windows-Optimizer-for-All.zip` к релизу. ZIP содержит `WindowsOptimizerForAll.exe`, README, эту инструкцию и SHA-256.

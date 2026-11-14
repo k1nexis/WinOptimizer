@@ -14,6 +14,8 @@ Requirements:
 - .NET Framework 4.8. It is included with current Windows 10/11 releases; older supported Windows versions may need the Microsoft installer.
 - Internet access is needed to download selected applications or driver packages.
 
+The app detects whether Windows is 32-bit (x86) or 64-bit (x64) and selects the matching installer when the publisher provides one. Apps that only support 64-bit Windows are disabled with an explanation on 32-bit systems. Steam is disabled there because Valve ended support for 32-bit Windows in 2026; WinRAR is disabled because its supported Windows release is 64-bit only. Some installers, including WinGet packages, choose a compatible architecture themselves.
+
 ## Features
 
 - **Optimization profiles:** gaming, older PCs/laptops, media work, and work/study. A profile only preselects proposed settings and software. No changes are made until you confirm the action.
@@ -50,8 +52,8 @@ For the full step-by-step publishing guide in Russian, see [PUBLISHING.md](PUBLI
 3. When ready to publish, create and push a version tag, for example:
 
    ```powershell
-   git tag v1.2.0
-   git push origin v1.2.0
+   git tag v1.4.1
+   git push origin v1.4.1
    ```
 
 The workflow builds the project on Windows and attaches `Windows-Optimizer-for-All.zip` to a GitHub Release for `v*` tags. Review the source, choose a repository license, and test the artifact on a clean Windows machine before distributing it broadly. The executable is not code-signed by this project.
@@ -82,6 +84,8 @@ Windows Optimizer for All — настольная программа для Win
 - Рекомендуются Windows 10 или 11. Базовые функции могут работать на Windows 7 SP1 или Windows 8.1 с установленным .NET Framework 4.8, но новые программы из каталога там не поддерживаются.
 - .NET Framework 4.8. Он входит в современные выпуски Windows 10/11; на старых поддерживаемых версиях Windows может понадобиться установщик Microsoft.
 - Для загрузки программ и пакетов драйверов требуется интернет.
+
+Приложение определяет, установлена ли 32-разрядная Windows (x86) или 64-разрядная (x64), и выбирает подходящий установщик, если издатель выпускает обе версии. Программы только для 64-разрядной Windows на 32-разрядной системе недоступны; причина показывается при наведении. Steam недоступен из-за прекращения поддержки 32-разрядной Windows в 2026 году, а поддерживаемая версия WinRAR выпускается только для 64-разрядной Windows. Некоторые установщики, включая пакеты WinGet, сами выбирают совместимую архитектуру.
 
 ## Возможности
 
@@ -120,8 +124,8 @@ Mullvad Browser предназначен для снижения трекинг�
 3. Когда версия будет готова, создайте и отправьте тег, например:
 
    ```powershell
-   git tag v1.2.0
-   git push origin v1.2.0
+   git tag v1.4.1
+   git push origin v1.4.1
    ```
 
 Workflow собирает приложение на Windows и прикрепляет `Windows-Optimizer-for-All.zip` к GitHub Release для тегов `v*`. Перед распространением проверьте исходники, выберите лицензию репозитория и испытайте архив на чистой Windows. EXE не подписан цифровой подписью разработчика этого проекта.
